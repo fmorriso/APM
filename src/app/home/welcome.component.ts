@@ -5,5 +5,7 @@ import { Component, VERSION } from '@angular/core';
 })
 export class WelcomeComponent {
   public pageTitle = 'Welcome';
-  angularVersion = VERSION.full;
+  get angularVersion() {
+    return VERSION.full;
+  }
 }
