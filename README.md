@@ -16,4 +16,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - upgrade to latest Angular
 - Switch from CSS to SCSS for styling
-- Added `<ng-template>` directives inside certain .component.html files to provide a clean separation of `ngFor` and `ngIf` logic from the rest of the html they control.
+- Added `<ng-container>` directives inside certain .component.html files to provide a clean separation of `ngFor` and `ngIf` logic from the rest of the html they control.
