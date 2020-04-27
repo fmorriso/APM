@@ -1,3 +1,11 @@
+/* Bootstrap 4  */
+$enable-flex: true; // Enable Flexbox mode
+@import '~bootstrap/scss/bootstrap.scss';
+
+/* font-awesome */
+$fa-font-path: '../node_modules/font-awesome/fonts';
+@import '~font-awesome/scss/font-awesome.scss';
+
 div {
   .card-header {
     font-size: large;
