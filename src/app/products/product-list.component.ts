@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'pm-products',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  pageTitle = 'Product List';
-
+  readonly pageTitle = 'Product List';
+  // mock product data:
   products: any[] = [
     {
       productId: 2,
@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
       description: '15 gallon capacity rolling garden cart',
       price: 32.99,
       starRating: 4.2,
-      imageUrl: 'assets/images/garden_cart.png'
+      imageUrl: 'assets/images/garden_cart.png',
     },
     {
       productId: 5,
@@ -27,14 +27,11 @@ export class ProductListComponent implements OnInit {
       description: 'Curved claw steel hammer',
       price: 8.9,
       starRating: 4.8,
-      imageUrl: 'assets/images/hammer.png'
-    }
+      imageUrl: 'assets/images/hammer.png',
+    },
   ];
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

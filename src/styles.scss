@@ -1,23 +1,19 @@
 /* Bootstrap 4  */
 $enable-flex: true; // Enable Flexbox mode
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 
-/* font-awesome */
-$fa-font-path: '../node_modules/font-awesome/fonts';
-@import '~font-awesome/scss/font-awesome.scss';
+/* Font Awesome */
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
 
 div {
   .card-header {
     font-size: large;
   }
   .card {
-    margin-top: 10px
+    margin-top: 10px;
   }
   .table {
-    margin-top: 10px
+    margin-top: 10px;
   }
-}
-
-.text-center {
-  text-align: center;
 }
