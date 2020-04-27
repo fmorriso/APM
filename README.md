@@ -19,3 +19,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Added `<ng-container>` directives inside certain .component.html files to provide a clean separation of `ngFor` and `ngIf` logic from the rest of the html they control.
 - Use `ExtraOptions` when defining routes so that I can change `enableTracing` to `true` when I need to find out why my routes are not working.
 - Got rid of weird warning when looking at file `angular.json` by changing all `APM` to `apm` inside that file. It seems that Angular or maybe tslint does not like capital letters for Angular project names when specified inside `angular.json`.
+- added .npmrc to suppress creation of `package-lock.json`
