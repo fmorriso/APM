@@ -1,6 +1,8 @@
-# APM
+# Deborah Kurata's famous Acme Product Management (APM) Angular demonstration application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+(with a few "opinionated upgrades" by Fred Morrison)
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1 and populated with pieces of Deborah Kurata's famous APM application code.
 
 ## Pluralsight Course Information
 
@@ -9,3 +11,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [Course Discussion](https://app.pluralsight.com/library/courses/angular-2-getting-started-update/discussion)
 
 [Problem Solver](https://blogs.msmvps.com/deborahk/angular-2-getting-started-problem-solver/)
+
+## Changes I made to Deborah's original course files
+
+- upgrade to latest Angular
+- Switch from CSS to SCSS for styling
+- Added `<ng-template>` directives inside certain .component.html files to provide a clean separation of `ngFor` and `ngIf` logic from the rest of the html they control.
