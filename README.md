@@ -18,3 +18,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Switch from CSS to SCSS for styling
 - Added `<ng-container>` directives inside certain .component.html files to provide a clean separation of `ngFor` and `ngIf` logic from the rest of the html they control.
 - Use `ExtraOptions` when defining routes so that I can change `enableTracing` to `true` when I need to find out why my routes are not working.
+- added .npmrc to suppress creation of `package-lock.json`
