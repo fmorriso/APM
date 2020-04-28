@@ -6,12 +6,12 @@
     <div class="row">
       <div class="col-md-2">Filter by:</div>
       <div class="col-md-4">
-        <input type="text" />
+        <input type="text" [(ngModel)]="listFilter" />
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
-        <h4>Filtered by:</h4>
+        <h4>Filtered by: {{ listFilter }}</h4>
       </div>
     </div>
     <!-- if there are any products to display, show them in a nice Bootstrap-styled table -->
@@ -21,14 +21,14 @@
           <thead>
             <tr>
               <th>
-                <button class="btn btn-primary">
-                  Show Image
+                <button class="btn btn-primary" (click)="toggleImage()">
+                  {{ showImage ? "Hide" : "Show" }} Image
                 </button>
               </th>
               <th>Product</th>
               <th>Code</th>
-              <th>Available</th>
-              <th>Price</th>
+              <th class="text-center">Available</th>
+              <th class="text-right">Price</th>
               <th>5 Star Rating</th>
             </tr>
           </thead>
@@ -36,11 +36,21 @@
             <!-- generate a row in the table for each product -->
             <ng-container *ngFor="let product of products">
               <tr>
-                <td></td>
+                <td>
+                  <!-- only show the image when user wants to see it -->
+                  <ng-container *ngIf="showImage">
+                    <img
+                      [src]="product.imageUrl"
+                      [title]="product.productName"
+                      class="product-image"
+                    />
+                  </ng-container>
+                </td>
+
                 <td>{{ product.productName }}</td>
-                <td>{{ product.productCode }}</td>
-                <td>{{ product.releaseDate }}</td>
-                <td>{{ product.price }}</td>
+                <td>{{ product.productCode | lowercase }}</td>
+                <td class="text-center">{{ product.releaseDate | date:'yyyy-MM-dd' }}</td>
+                <td class="text-right">{{ product.price | currency }}</td>
                 <td>{{ product.starRating }}</td>
               </tr>
             </ng-container>

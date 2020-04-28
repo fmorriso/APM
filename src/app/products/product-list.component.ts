@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   readonly pageTitle = 'Product List';
+  showImage = false;
+  listFilter = 'cart';
+
   // mock product data:
   products: any[] = [
     {
@@ -34,4 +37,8 @@ export class ProductListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 }
