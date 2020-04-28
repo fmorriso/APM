@@ -36,7 +36,12 @@
             <!-- generate a row in the table for each product -->
             <ng-container *ngFor="let product of products">
               <tr>
-                <td></td>
+                <td>
+                  <img [src]="product.imageUrl"
+                  [title]="product.productName"
+                  class="product-image"
+                  >
+                </td>
                 <td>{{ product.productName }}</td>
                 <td>{{ product.productCode }}</td>
                 <td>{{ product.releaseDate }}</td>
