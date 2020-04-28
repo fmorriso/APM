@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit {
   readonly pageTitle = 'Product List';
   showImage = false;
+  listFilter = 'cart';
+
   // mock product data:
   products: any[] = [
     {
