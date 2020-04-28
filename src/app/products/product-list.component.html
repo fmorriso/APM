@@ -21,8 +21,8 @@
           <thead>
             <tr>
               <th>
-                <button class="btn btn-primary">
-                  Show Image
+                <button class="btn btn-primary" (click)="toggleImage()">
+                  {{ showImage ? "Hide" : "Show" }} Image
                 </button>
               </th>
               <th>Product</th>
@@ -37,11 +37,16 @@
             <ng-container *ngFor="let product of products">
               <tr>
                 <td>
-                  <img [src]="product.imageUrl"
-                  [title]="product.productName"
-                  class="product-image"
-                  >
+                  <!-- only show the image when user told us too -->
+                  <ng-container *ngIf="showImage">
+                    <img
+                      [src]="product.imageUrl"
+                      [title]="product.productName"
+                      class="product-image"
+                    />
+                  </ng-container>
                 </td>
+
                 <td>{{ product.productName }}</td>
                 <td>{{ product.productCode }}</td>
                 <td>{{ product.releaseDate }}</td>
