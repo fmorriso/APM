@@ -1,4 +1,9 @@
-<div class="crop" [style.width.px]="starWidth" [title]="rating">
+<div
+  class="crop"
+  (click)="onClick()"
+  [style.width.px]="starWidth"
+  [title]="rating"
+>
   <div class="product-star">
     <span class="fa fa-star"></span>
     <span class="fa fa-star"></span>
