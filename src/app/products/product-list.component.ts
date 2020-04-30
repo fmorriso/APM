@@ -9,7 +9,14 @@ import { IProduct } from './product';
 export class ProductListComponent implements OnInit {
   readonly pageTitle = 'Product List';
   showImage = false;
-  listFilter = 'cart';
+
+  private _listFilter: string;
+  public get listFilter(): string {
+    return this._listFilter;
+  }
+  public set listFilter(value: string) {
+    this._listFilter = value;
+  }
 
   // mock product data:
   products: IProduct[] = [
@@ -35,9 +42,13 @@ export class ProductListComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    this.listFilter = 'cart';
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('In OnInit');
+  }
 
   toggleImage(): void {
     this.showImage = !this.showImage;
