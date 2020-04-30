@@ -8,26 +8,32 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { StarComponent } from './shared/star.component';
 
 const routes: Routes = [
-  {path: 'welcome', component: WelcomeComponent},
-  {path: 'products', component: ProductListComponent},
-  {path: '', redirectTo: 'welcome', pathMatch: 'full'},
-  {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'products', component: ProductListComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+  { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
 ];
 
 const routeOptions: ExtraOptions = {
-  enableTracing: true
+  enableTracing: false,
 };
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, ProductListComponent, ConvertToSpacesPipe],
+  declarations: [
+    AppComponent,
+    WelcomeComponent,
+    ProductListComponent,
+    ConvertToSpacesPipe,
+    StarComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes, routeOptions)
+    RouterModule.forRoot(routes, routeOptions),
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

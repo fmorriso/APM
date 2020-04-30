@@ -7,7 +7,7 @@ import { IProduct } from './product';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  readonly pageTitle = 'Product List';
+  pageTitle = 'Product List';
   showImage = false;
 
   private _listFilter: string;
@@ -53,6 +53,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('In OnInit');
+  }
+
+  onRatingClicked(message: string): void {
+    this.pageTitle = `Product List: ${message}`;
   }
 
   performFilter(filterBy: string): IProduct[] {
