@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from './product';
 
 @Component({
   selector: 'pm-products',
@@ -8,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit {
   readonly pageTitle = 'Product List';
   showImage = false;
-  listFilter = 'cart';
 
+  private _listFilter: string;
+  public get listFilter(): string {
+    return this._listFilter;
+  }
+  public set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredProducts = this.listFilter
+      ? this.performFilter(this.listFilter)
+      : this.products;
+  }
+
+  filteredProducts: IProduct[];
   // mock product data:
-  products: any[] = [
+  products: IProduct[] = [
     {
       productId: 2,
       productName: 'Garden Cart',
@@ -34,9 +46,22 @@ export class ProductListComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    this.filteredProducts = this.products;
+    this.listFilter = 'cart';
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('In OnInit');
+  }
+
+  performFilter(filterBy: string): IProduct[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.products.filter(
+      (product: IProduct) =>
+        product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1
+    );
+  }
 
   toggleImage(): void {
     this.showImage = !this.showImage;
