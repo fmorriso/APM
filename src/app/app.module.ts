@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 //
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductListComponent } from './products/product-list.component';
+import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
@@ -20,7 +21,7 @@ const routeOptions: ExtraOptions = {
 };
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, ProductListComponent],
+  declarations: [AppComponent, WelcomeComponent, ProductListComponent, ConvertToSpacesPipe],
   imports: [
     BrowserModule,
     FormsModule,

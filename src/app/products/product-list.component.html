@@ -48,8 +48,12 @@
                 </td>
 
                 <td>{{ product.productName }}</td>
-                <td>{{ product.productCode | lowercase }}</td>
-                <td class="text-center">{{ product.releaseDate | date:'yyyy-MM-dd' }}</td>
+                <td>
+                  {{ product.productCode | lowercase | convertToSpaces: "-" }}
+                </td>
+                <td class="text-center">
+                  {{ product.releaseDate | date: "yyyy-MM-dd" }}
+                </td>
                 <td class="text-right">{{ product.price | currency }}</td>
                 <td>{{ product.starRating }}</td>
               </tr>
