@@ -10,6 +10,7 @@ import { ProductService } from './product.service';
 export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
   showImage = false;
+  errorMessage: string;
 
   private _listFilter: string;
   public get listFilter(): string {
@@ -28,14 +29,23 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    this.filteredProducts = this.products;
+    this.productService
+      .getProducts() // Observable<IProduct[]>
+      //
+      .subscribe({
+        next: (products: IProduct[]) => {
+          this.products = products;
+          this.filteredProducts = this.products;
+        },
+        error: (err) => (this.errorMessage = err),
+      });
   }
 
   onRatingClicked(message: string): void {
     this.pageTitle = `Product List: ${message}`;
   }
 
+  // filter the list of products based on what the user types into the filter box
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.products.filter(
