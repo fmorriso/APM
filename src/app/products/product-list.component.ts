@@ -30,10 +30,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService
-      .getProducts()
+      .getProducts() // Observable<IProduct[]>
       //
       .subscribe({
-        next: (products) => {
+        next: (products: IProduct[]) => {
           this.products = products;
           this.filteredProducts = this.products;
         },
