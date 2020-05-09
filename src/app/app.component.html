@@ -1,2 +1,14 @@
-<h1 class="text-center">Acme Product Management</h1>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand">{{ pageTitle }}</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="'/welcome'">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="'/products'">Product List</a>
+    </li>
+  </ul>
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
