@@ -18,6 +18,7 @@ const routes: Routes = [
     path: 'products/:id',
     canActivate: [ProductDetailGuard],
     component: ProductDetailComponent,
+    data: { isValidId: true },
   },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
