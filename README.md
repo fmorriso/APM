@@ -12,6 +12,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 [Problem Solver](https://blogs.msmvps.com/deborahk/angular-2-getting-started-problem-solver/)
 
+[Deborah's GitHub repo](https://github.com/DeborahK/Angular-GettingStarted)
+
 ## Changes I made to Deborah's original course files
 
 - upgrade to latest Angular
