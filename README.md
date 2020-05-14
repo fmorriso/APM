@@ -21,5 +21,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Added `<ng-container>` directives inside certain .component.html files to provide a clean separation of `ngFor` and `ngIf` logic from the rest of the html they control.
 - Use `ExtraOptions` when defining routes so that I can change `enableTracing` to `true` when I need to find out why my routes are not working.
 - Got rid of weird warning when looking at file `angular.json` by changing all `APM` to `apm` inside that file. It seems that Angular or maybe tslint does not like capital letters for Angular project names when specified inside `angular.json`.
-- added `.npmrc` with `package-lock=false` to suppress creation of `package-lock.json` because I don't like using package locks for training/demo projects.
+- added file `.npmrc` with `package-lock=false` to suppress creation of `package-lock.json` because I don't like using package locks for training/demo projects.
 - In module 13, I split out the routing into separate modules. It was discussed in the video, but there was no demonstration for it, so you'll have to trust that I implemented it correctly in files `app-routing.module.ts` and `product-routing.module.ts`.
